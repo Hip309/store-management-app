@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
-import {GoPrimitiveDot} from 'react-icons/go';
+import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
 import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
@@ -30,7 +30,7 @@ const Ecommerce = () => {
           </div>
 
           <div className='mt-6'>
-            <Button 
+            <Button
               color='white'
               bgColor='blue'
               text='Download'
@@ -43,14 +43,16 @@ const Ecommerce = () => {
         <div className='flex m-3 flex-wrap justify-center gap-1 items-center'>
           {earningData.map((item) => (
             <div key={item.title}
-            className='bg-white dark:text-gray-200 
+              className='bg-white dark:text-gray-200 
             dark:bg-secondary-dark-bg md:w-56
             p-4 pt-9 rounded-2xl'
             >
               <button type='button'
-              style={{color: item.iconColor,
-              backgroundColor: item.iconBg}}
-              className='text-2xl opacity-0.9 rounded-full 
+                style={{
+                  color: item.iconColor,
+                  backgroundColor: item.iconBg
+                }}
+                className='text-2xl opacity-0.9 rounded-full 
               p-4 hover:drop-shadow-xl'
               >
                 {item.icon}
@@ -81,23 +83,23 @@ const Ecommerce = () => {
               Revenue Updates
             </p>
             <div className='flex items-center gap-4'>
-                <p className='flex items-center gap-2 
+              <p className='flex items-center gap-2 
                 text-gray-600 hover:drop-shadow-xl'
-                >
-                  <span>
-                    <GoPrimitiveDot/>
-                  </span>
-                  <span>Expense</span>
-                </p>
+              >
+                <span>
+                  <GoPrimitiveDot />
+                </span>
+                <span>Expense</span>
+              </p>
 
-                <p className='flex items-center gap-2 
+              <p className='flex items-center gap-2 
                 text-green-400 hover:drop-shadow-xl'
-                >
-                  <span>
-                    <GoPrimitiveDot/>
-                  </span>
-                  <span>Budget</span>
-                </p>
+              >
+                <span>
+                  <GoPrimitiveDot />
+                </span>
+                <span>Budget</span>
+              </p>
             </div>
           </div>
 
@@ -119,10 +121,22 @@ const Ecommerce = () => {
               <div className='mt-8'>
                 <p>
                   <span className='text-3xl font-semibold'>$48,438</span>
-                  
                 </p>
                 <p className='text-gray-500 mt-1'>Expense</p>
               </div>
+
+              <div className='mt-5'>
+                <SparkLine
+                  currentColor='blue'
+                  id='line-sparkline'
+                  type='Line'
+                  height='80px'
+                  width='250px'
+                  data={SparklineAreaData}
+                  color='blue'
+                />
+              </div>
+
             </div>
           </div>
         </div>
