@@ -2,7 +2,7 @@ import React from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { Stacked, Pie, Button, SparkLine } from '../components';
-import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import { earningData, SparklineAreaData, ecomPieChartData, stackedPrimaryXAxis, stackedPrimaryYAxis } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 
 
@@ -103,14 +103,14 @@ const Ecommerce = () => {
             </div>
           </div>
 
-          <div className='MT-10 FLEX GAP-10 FLEX-WRAP justify-center'>
+          <div className='mt-10 flex gap-10 flex-wrap justify-center'>
             <div className='border-r-1 border-color m-4 pr-10'>
               <div>
                 <p>
                   <span className='text-3xl font-semibold'>$97,438</span>
                   <span className='p-1.5 hover:drop-shadow-xl 
                   cursor-pointer rounded-full 
-                  text-white bg-green-400 ml-3'
+                  text-white bg-green-400 ml-3 text-xs'
                   >
                     23%
                   </span>
@@ -124,7 +124,7 @@ const Ecommerce = () => {
                 </p>
                 <p className='text-gray-500 mt-1'>Expense</p>
               </div>
-
+              {/* Sparkline chart */}
               <div className='mt-5'>
                 <SparkLine
                   currentColor='blue'
@@ -137,7 +137,24 @@ const Ecommerce = () => {
                 />
               </div>
 
+              <div className='mt-10'>
+                <Button 
+                  color='white'
+                  bgColor='blue'
+                  text='Download Report'
+                  borderRadius= '10px'
+                />
+              </div>
             </div>
+
+            {/* Stack chart */}
+            <div>
+              <Stacked
+                width='320px'
+                height='360px'
+              />
+            </div>
+
           </div>
         </div>
       </div>
